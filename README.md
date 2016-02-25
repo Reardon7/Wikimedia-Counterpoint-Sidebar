@@ -2,7 +2,7 @@
 A Wikimedia extension that allows comments or counterarguments assocaited with a specific passage of the main article to be creain a sidebar
 
 
-Variable to be set in LocalSettings.php					
+.Variable to be set in LocalSettings.php					
 					
 Variable Name	    Option A	    Option B	        default		   Comments
 Sbar_Default	    All_pages_on	All_pages_off	    on		
@@ -28,7 +28,7 @@ Main text makes is composed of two sentences.<sbar>All the content, including ma
 					
 					
 Other Specifications					
-
+Here's where we can discuss additional changes.
 
 
 .					
