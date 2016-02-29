@@ -24,12 +24,11 @@ I believe this format would be very valuable for many types of wikis . . . not o
 
 Operational Details
 
-I would envision a new wiki code, similar to <ref> which would instead be <sidebar> or perhaps <sb>
-All the text and formatting, including wiki links to other articles and sidebar references (which would appear at the bottom of the sidebar), would appear between the sidebar start tag and the sidebar end tag. 
+I would envision a new wiki code, similar to |ref| which would instead be |sidebar|> or perhaps |sb|.  All the text and formatting, including wiki links to other articles and sidebar references (which would appear at the bottom of the sidebar), would appear between the sidebar start tag and the sidebar end tag. 
 
-Given the potential complexity of the sidebar counter-arguments, rather than put all the text between the the brackets such as <sidebar Here's a three paragraph comment . . . . >,  I might suggest breaking use <sidebar start>  "Here's a three paragraph comment . . . ." <sidebar end>.   
+Given the potential complexity of the sidebar counter-arguments, rather than put all the text between the the brackets such as |sidebar Here's a three paragraph comment . . . . |  I would prefer to see us breaking use |sidebar start|  "Here's a three paragraph comment in wikicode that can display links and incluide other formatting such as bold, italics, indent, et cetera . . . ." |sidebar end|.   
 
-When material between the sidebar tags are displayed, ignore any white space preceding or following the <sidebar start> and <sidebar end> tags so that in the source code, editors could add a couple carriage returns to more clearly display the sidebar code apart from the main article code.  
+When material between the sidebar tags are displayed, we should ignore any white space preceding or following the <sidebar start> and <sidebar end> tags so that in the source code, editors could add a couple carriage returns to more clearly display the sidebar code apart from the main article code.  
 
 Preferably, all of this would be done using a WYSIWYG editor (now common for logged in wikipedia editors_ but some accommodation might be made as suggested for those who edit the source code.
 
@@ -43,32 +42,10 @@ Options:
 
 
 
-
-
-.Variable to be set in LocalSettings.php					
-					
-Variable Name	    Option A	    Option B	        default		   Comments
-Sbar_Default	    All_pages_on	All_pages_off	    on		
-sbar_width	      number in pixels or percent		  25%		
-sbar_height	      number of rows autodisplayed		4	  			(rebuttal sections to be displayed in truncated form, terminated by an ellipsis that can be clicked to reveal the full text of that rebuttal section. This prevents long rebuttals from interrupting the case text flow	)
-
-
-sbar_max					Max characters in sidebar entry		no limit.   (Any length allowed	If the entry exceeds the limit, truncate display of text and add to end of displayed sidebar, "(Excess truncated)")
-
-sbar_background		color of background							none			(Define a default color.  Wiki markup code may alter.)	
-sbar_textcolor		color of sidebar text						none	    (Define a default color.  Wiki markup code may alter.)
-sbar_reserve      yes or no                       yes 			(If there are no sidebar entries on a page that allows them, still reserve the space for the sidebar so that the layout does not dramatically change once a sidebar entry is created)		
-					
-					
-Page Attributes only editable by Administrators					
-
-Sbar_Enabled			Yes			No		(This allows Admin to force override of Sbar_Default)
-
-<sbar></sbar>
-					
 Example of Usage in text					
-Main text makes is composed of two sentences.<sbar>All the content, including markup, between the sbar tags will appear in the sidbar next to the first sentence in this example.</sbar>  Here is the second sentence of the main text.					
-					
+Main text makes is composed of two sentences. |sbar| All the content, including markup, between the sbar tags will appear in the sidbar next to the first sentence in this example.|/sbar|  Here is the second sentence of the main text.					
+DETAILS
+I've created a spread sheet with some detailed specs that you can comment on:  https://docs.google.com/spreadsheets/d/1lljcU5gftxmR9fqBlhS5Buceksh49LqP0JuNrBrWWb8/edit?usp=sharing
 					
 Other Specifications					
 Here's where we can discuss additional changes.
