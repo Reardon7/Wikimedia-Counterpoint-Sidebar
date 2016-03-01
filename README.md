@@ -1,30 +1,30 @@
 # Wikimedia-Counterpoint-Sidebar
-A Wikimedia extension that allows comments or counterarguments assocaited with a specific passage of the main article to be creain a sidebar
+A Wikimedia extension that allows comments or counterarguments assocaited with a specific passage of the main article to be created and displayed in a sidebar.   
+
+This extension must be created to work with the WikiMedia Visual Editor . . . https://www.mediawiki.org/wiki/Extension:VisualEditor . . . which means that the VisualEditor extension will also require modification to properly display and allow editing of the sidebar comments.  This modification should be done as part of the Wikimedia project so the features will be available to all wikimedia users.
 
 
 I've created a spread sheet with some detailed specs that you can comment on:  https://docs.google.com/spreadsheets/d/1lljcU5gftxmR9fqBlhS5Buceksh49LqP0JuNrBrWWb8/edit?usp=sharing
 
 
-
+# EXAMPLES OF HOW IT WILL ROUGHLY LOOK
 A rough example of the layout is seen at https://www.cairn.info/revue-internationale-de-philosophie-2005-4-page-491.htm#no7 which shows a portion of the endnotes to the left of the main article.  I think it would be better to have them to the right, but it could be an option that the wiki owner could choose.  
 
 Another example, for WordPress, is http://futureofthebook.org/commentpress/ and also http://kevinw.de/greenbird/inline-comments-demo/
 
-
-The database layout for WordPress has the advantage of treating comments as separate entities.  I'm not sure this is as easily done in MediaWiki....but I'm open to using another open source Wiki platform if it is easier to implement these features in a different platform.
-
+# DESCRIPTION OF USE
 I need this for a wiki dedicated to discuss/debate theological and philosophical issues where the main article would be addressed to defend a specific proposition and the sidebar would be used to critique the statements or claims being made in the main article.   
 
 With perhaps dozens or hundreds of people editing on one or both sides, the rule of etiquette would be that "each side" would be entitled to put their best arguments forward in each section and that the critic's objections, comments would be confined to the sidebar rather than in wrestling over contested edits of the main article to develop a consensus that doesn't exist (as per what happens in contentious Wikipedia articles).
 
-This goal of having collaborative editing is why I don't see it as a good fit for expanding on the WordPress examples above.
-
 I believe this format would be very valuable for many types of wikis . . . not only those engaged in any point/counterpoint presentations, but also for collaborative development of business plans, industry standards, etc, where portions of what would now appear on the discussion page can be moved to the main page by way of sidebar edits.
 
 
-Operational Details
+# Operational Details
 
-I would envision a new wiki code, similar to |ref| which would instead be |sidebar|> or perhaps |sb|.  All the text and formatting, including wiki links to other articles and sidebar references (which would appear at the bottom of the sidebar), would appear between the sidebar start tag and the sidebar end tag. 
+I would envision a new wiki code, similar to |ref| which would instead be |sidebar|> or perhaps |sb|. (I am using the | character since the angle-bracket will not display in this readme.md file) 
+
+All the text and formatting, including wiki links to other articles and sidebar references (which would appear at the bottom of the sidebar), would appear between the sidebar start tag and the sidebar end tag. 
 
 Given the potential complexity of the sidebar counter-arguments, rather than put all the text between the the brackets such as |sidebar Here's a three paragraph comment . . . . |  I would prefer to see us breaking use |sidebar start|  "Here's a three paragraph comment in wikicode that can display links and incluide other formatting such as bold, italics, indent, et cetera . . . ." |sidebar end|.   
 
@@ -51,7 +51,7 @@ Other Specifications
 Here's where we can discuss additional changes.
 
 
-DATA BASE OPTIONS
+# DATA BASE OPTIONS
 
 See the following links:
 
@@ -65,13 +65,13 @@ The text of the page itself is stored in the text table. To retrieve the text of
 https://www.mediawiki.org/wiki/Manual:Text_table
 The text table holds the wikitext of individual page revisions. If using Postgres or Oracle, this table is named pagecontent.
 
-MY SUGGESTION
+# MY SUGGESTION REGARDING THE DATA BASE SCHEMA
 
-We try to follow the general schema outlined above for page table and text table.
+I think it may be best if we try to follow the general schema outlined above for page table and text table, applying the same elements to a Sidebar table.
 
 1.  We create a new table, SideBar Table, with all the elements of page table.
 2.  The wikitext for each SideBar entry is actually stored in the text table, just as is done with page table.
-3.  When a comment is created and associated with a specific paragraph in the wikitext of the individual page, the hook |sidebar:xxxxxxxx| is inserted in the text, where xxxxxx points to the sidebar revision ID tag used to retrieve the sidebar text for rendering on the displayed page.
+3.  When a comment is created and associated with a specific paragraph in the wikitext of the individual page, a hook like |sidebar:xxxxxxxx| is inserted in the text, where xxxxxx points to the sidebar revision ID tag used to retrieve the sidebar text for rendering on the displayed page.   (The xxxxxx may be replaced with a user provided text which is actually linked to the equivalent of the sidebar-rev_text_id).
 
 By keeping as close as possible to the structure used for pages in Wikimedia, we can hopefully minimize future coding efforts required to keep sidebar text entry and rendering up to par with page entry and rendering.
 
