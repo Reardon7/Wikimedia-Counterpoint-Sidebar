@@ -51,4 +51,30 @@ Other Specifications
 Here's where we can discuss additional changes.
 
 
-.					
+DATA BASE OPTIONS
+
+See the following links:
+
+https://www.mediawiki.org/wiki/Manual:Database_layout 
+
+https://www.mediawiki.org/wiki/Manual:Page_table
+
+The page table can be considered the "core of the wiki". Each page in a MediaWiki installation has an entry here which identifies it by title and contains some essential metadata. It was first introduced in r6710, in MediaWiki 1.5.
+The text of the page itself is stored in the text table. To retrieve the text of an article, MediaWiki first searches for page_title in the page table. Then, page_latest is used to search the revision table for rev_id, and rev_text_id is obtained in the process. The value obtained for rev_text_id is used to search for old_id in the text table to retrieve the text. When a page is deleted, the revisions are moved to the archive table.
+
+https://www.mediawiki.org/wiki/Manual:Text_table
+The text table holds the wikitext of individual page revisions. If using Postgres or Oracle, this table is named pagecontent.
+
+MY SUGGESTION
+
+We try to follow the general schema outlined above for page table and text table.
+
+1.  We create a new table, SideBar Table, with all the elements of page table.
+2.  The wikitext for each SideBar entry is actually stored in the text table, just as is done with page table.
+3.  When a comment is created and associated with a specific paragraph in the wikitext of the individual page, the hook |sidebar:xxxxxxxx| is inserted in the text, where xxxxxx points to the sidebar revision ID tag used to retrieve the sidebar text for rendering on the displayed page.
+
+By keeping as close as possible to the structure used for pages in Wikimedia, we can hopefully minimize future coding efforts required to keep sidebar text entry and rendering up to par with page entry and rendering.
+
+
+
+
