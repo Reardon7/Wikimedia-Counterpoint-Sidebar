@@ -39,6 +39,10 @@ Options:
 2.  Option to highlight any amount of text  to which the comment is to be attached and displayed next to in the sidebar.
 
 3.  Option to show only X number of lines of the comment, with an <expand> link which would reveal the entire comment, reformatting the page to push down the next paragraph of the main article, if necessary, so the entire comment can be shown.   The idea here is that normally the reader is reading the main article and should be able to focus on the main article without formatting requirements for a long comment to disrupt the layout of the main article.
+4.  Only registered users should be allowed to create or edit a sidebar counterpoint.   These counterpoints are moderated only in the sense they are subject to change by other editors.  
+5.  Comments can be edited by other registered users, or the original poster.  Basically, the page allows for "two sides" to offer competing views.  Proponents of the position covered by the main article collaborate on their position.   Opponents are allowed to work together in collaborating on counter arguments, summarized in the sidebar and with links to other pages where they might present their arguments together.   In short, anyone can edit a sidebar counter argument.  Community standards, however, regulate that the sidebar should be used to preserve and sharpen the counterarguments . . . not delete them.
+6.  It would be fine to keep a tally of likes or dislikes regarding the comments, but I much more interested in having a way for users to document and share their rating of the main article's proposition:  1.  Completely agree.   2.  Mostly agree.   3.  Mostly disagree.  4. Completely disagree.   From these ratings I would then want to be able to see an index of articles, possibly narrowed by category, showing all for which a particular editor agrees or disagrees.   Conversely, clicking on the 1 to 4 ranking should allow me to see every editor who agrees or disagrees with that article, so I can then investigate what certain "leaders in thought" think across multiple articles.
+
 
 
 
