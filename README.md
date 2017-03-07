@@ -8,7 +8,10 @@ I've created a spread sheet with some detailed specs that you can comment on:  h
 
 
 # EXAMPLES OF HOW IT WILL ROUGHLY LOOK
-A rough example of the layout is seen at https://www.cairn.info/revue-internationale-de-philosophie-2005-4-page-491.htm#no7 which shows a portion of the endnotes to the left of the main article.  I think it would be better to have them to the right, but it could be an option that the wiki owner could choose. It appears that this is all managed via a style sheet. The key is in the class="renvoi note" and class="amorce note" which can easily be modified to place the notes to the right instead of the left.  In the Cairn.info example, only a portion of the note is included in the body of each paragraph and the full footnote is displayed at the bottom of the page.  Note, when the style sheet is blocked, none of the sidebar text is displayed, which is the practice we want to follow as well, so that the sidebar is suppressed on a small mobile device.
+A rough example of the layout is seen at https://github.com/Reardon7/Wikimedia-Counterpoint-Sidebar/issues/2
+![alt tag](https://cloud.githubusercontent.com/assets/17473175/23673493/1c9796dc-0338-11e7-9648-0f586a1bd775.jpg)
+
+Similar examples are seen in other platforms.  For example, https://www.cairn.info/revue-internationale-de-philosophie-2005-4-page-491.htm#no7 which shows a portion of the endnotes to the left of the main article.  I think it would be better to have them to the right, but it could be an option that the wiki owner could choose. It appears that this is all managed via a style sheet. The key is in the class="renvoi note" and class="amorce note" which can easily be modified to place the notes to the right instead of the left.  In the Cairn.info example, only a portion of the note is included in the body of each paragraph and the full footnote is displayed at the bottom of the page.  Note, when the style sheet is blocked, none of the sidebar text is displayed, which is the practice we want to follow as well, so that the sidebar is suppressed on a small mobile device.
 
 Another example, for WordPress, is http://futureofthebook.org/commentpress/ and also http://kevinw.de/greenbird/inline-comments-demo/
 
